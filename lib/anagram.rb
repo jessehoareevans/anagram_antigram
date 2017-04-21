@@ -2,7 +2,7 @@ class String
   define_method(:anagram_antigram?) do
     a = 'flea'
     b = 'leaf'
-    if a.chars.sort == b.chars.sort
+    if a.downcase().chars.sort == b.downcase().chars.sort
     return true
     # anagram = self.delete(' ')
     # anagram.downcase().match() == anagram.downcase()
