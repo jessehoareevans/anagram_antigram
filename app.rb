@@ -1,13 +1,13 @@
-equire('sinatra')
+require('sinatra')
 require('sinatra/reloader')
-require('./lib/coins')
+require('./lib/anagram')
 also_reload('lib/**/*.rb')
 
 get('/') do
-  erb(:anagram)
+  erb(:index)
 end
 
-get('/coins_combination') do
+get('/anagrams') do
   @angram = params.fetch('coin').to_i().coin()
   erb(:anagrams)
 end
