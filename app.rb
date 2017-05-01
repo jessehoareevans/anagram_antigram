@@ -7,7 +7,7 @@ get('/') do
   erb(:index)
 end
 
-get('/anagrams') do
-  @angram = params.fetch('coin').to_i().coin()
+get('/interface') do
+  @anagram = params.fetch('first').anagram(params.fetch('second'))
   erb(:anagrams)
 end

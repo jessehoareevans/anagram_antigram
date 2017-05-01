@@ -1,6 +1,6 @@
 # Anagrams and Antigrams
 
-#### Enter a word to see if it is an anagram or an antigran, 4-21-2017
+#### Enter a word to see if it is an anagram or an antigram, 4-21-2017
 
 #### By Jesse Hoare Evans
 

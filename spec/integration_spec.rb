@@ -1,13 +1,14 @@
-# require('capybara/rspec')
-# require('./app')
-# Capybara.app = Sinatra::Application
-# set(:show_exceptions, false)
-#
-# describe('anagrams_antigrams', {:type => :feature}) do
-#   it('returns true if the input is a palindrome and false otherwise') do
-#     visit('/')
-#     fill_in('anagrams_antigrams', :with => 'Was it a cat I saw')
-#     click_button('Send')
-#     expect(page).to have_content('true')
-#   end
-# end
+require('capybara/rspec')
+require('./app')
+Capybara.app = Sinatra::Application
+set(:show_exceptions, false)
+
+describe('anagram', {:type => :feature}) do
+ it('takes users input and outputs an answer') do
+   visit('/')
+   fill_in('first', with => 'flea')
+   fill_in('second', with => 'leaf')
+   click_button('Send')
+   expect(page).to have_content("this is an anagram")
+  end
+ end

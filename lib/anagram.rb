@@ -1,14 +1,23 @@
 class String
-  define_method(:anagram_antigram?) do
-    a = 'flea'
-    b = 'leaf'
-    if a.downcase().chars.sort == b.downcase().chars.sort
-    return true
-    # anagram = self.delete(' ')
-    # anagram.downcase().match() == anagram.downcase()
-  #   palindrome = self.delete(' ')
-  #   palindrome.downcase().reverse() == palindrome.downcase()
-  # end
-  end
+  define_method(:anagram) do |second|
+    first = self.delete(' ' ',' '?', '!').downcase()
+    second = second.delete(' ' ',' '?', '!').downcase()
+    firstWord = first.split("")
+    secondWord = second.split("")
+    vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+
+    if (firstWord & vowels).empty?
+      return "this is not a word"
+
+    elsif firstWord.reverse() == secondWord.reverse()
+      return "these words are palindromes"
+
+    elsif firstWord.join().chars.sort == secondWord.join().chars.sort
+      return "this is an anagram"
+
+    elsif (firstWord & secondWord).empty?
+      return "these words are antigrams"
+
+    end
   end
 end
